@@ -42,15 +42,15 @@ process.h
 processor.h
 ../include/processor.h
 
-/home/gautam/projects/CppND-System-Monitor/src/format.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/format.cpp
 string
 -
 sstream
 -
 format.h
-/home/gautam/projects/CppND-System-Monitor/src/format.h
+/home/gautam/projects/Cpp_System_Monitor/src/format.h
 
-/home/gautam/projects/CppND-System-Monitor/src/linux_parser.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/linux_parser.cpp
 dirent.h
 -
 unistd.h
@@ -60,15 +60,15 @@ string
 vector
 -
 linux_parser.h
-/home/gautam/projects/CppND-System-Monitor/src/linux_parser.h
+/home/gautam/projects/Cpp_System_Monitor/src/linux_parser.h
 
-/home/gautam/projects/CppND-System-Monitor/src/main.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/main.cpp
 ncurses_display.h
-/home/gautam/projects/CppND-System-Monitor/src/ncurses_display.h
+/home/gautam/projects/Cpp_System_Monitor/src/ncurses_display.h
 system.h
-/home/gautam/projects/CppND-System-Monitor/src/system.h
+/home/gautam/projects/Cpp_System_Monitor/src/system.h
 
-/home/gautam/projects/CppND-System-Monitor/src/ncurses_display.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/ncurses_display.cpp
 curses.h
 -
 chrono
@@ -80,13 +80,13 @@ thread
 vector
 -
 format.h
-/home/gautam/projects/CppND-System-Monitor/src/format.h
+/home/gautam/projects/Cpp_System_Monitor/src/format.h
 ncurses_display.h
-/home/gautam/projects/CppND-System-Monitor/src/ncurses_display.h
+/home/gautam/projects/Cpp_System_Monitor/src/ncurses_display.h
 system.h
-/home/gautam/projects/CppND-System-Monitor/src/system.h
+/home/gautam/projects/Cpp_System_Monitor/src/system.h
 
-/home/gautam/projects/CppND-System-Monitor/src/process.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/process.cpp
 unistd.h
 -
 cctype
@@ -98,17 +98,17 @@ string
 vector
 -
 process.h
-/home/gautam/projects/CppND-System-Monitor/src/process.h
+/home/gautam/projects/Cpp_System_Monitor/src/process.h
 linux_parser.h
-/home/gautam/projects/CppND-System-Monitor/src/linux_parser.h
+/home/gautam/projects/Cpp_System_Monitor/src/linux_parser.h
 
-/home/gautam/projects/CppND-System-Monitor/src/processor.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/processor.cpp
 processor.h
-/home/gautam/projects/CppND-System-Monitor/src/processor.h
+/home/gautam/projects/Cpp_System_Monitor/src/processor.h
 linux_parser.h
-/home/gautam/projects/CppND-System-Monitor/src/linux_parser.h
+/home/gautam/projects/Cpp_System_Monitor/src/linux_parser.h
 
-/home/gautam/projects/CppND-System-Monitor/src/system.cpp
+/home/gautam/projects/Cpp_System_Monitor/src/system.cpp
 unistd.h
 -
 cstddef
@@ -120,11 +120,11 @@ string
 vector
 -
 process.h
-/home/gautam/projects/CppND-System-Monitor/src/process.h
+/home/gautam/projects/Cpp_System_Monitor/src/process.h
 processor.h
-/home/gautam/projects/CppND-System-Monitor/src/processor.h
+/home/gautam/projects/Cpp_System_Monitor/src/processor.h
 system.h
-/home/gautam/projects/CppND-System-Monitor/src/system.h
+/home/gautam/projects/Cpp_System_Monitor/src/system.h
 linux_parser.h
-/home/gautam/projects/CppND-System-Monitor/src/linux_parser.h
+/home/gautam/projects/Cpp_System_Monitor/src/linux_parser.h
 

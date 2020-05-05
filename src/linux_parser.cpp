@@ -42,6 +42,7 @@ string LinuxParser::Kernel() {
     std::getline(stream, line);
     std::istringstream linestream(line);
     linestream >> os >>version >> kernel;
+    stream.close();
   }
   return kernel;
 }
@@ -72,10 +73,8 @@ float LinuxParser::MemoryUtilization() {
   std::ifstream stream(kProcDirectory + kMeminfoFilename);
   string key;
   long memValue;
-  long memTotal = 0;
-  long memFree = 0;
-  long memAvailable = 0;
-  long memBuffers;
+  float memTotal = 0.0;
+  float memFree = 0.0;
   string unit;
   if (stream.is_open()) {
     for(int i = 0; i<2 ; i++){
@@ -86,13 +85,14 @@ float LinuxParser::MemoryUtilization() {
         memTotal=  memValue; 
         continue;
       }
-      if(key=="MemFree: "){
+      if(key=="MemFree:"){
         memFree=  memValue; 
         continue;
       }
     }
+  stream.close();  
   }
-  return ((memTotal-memFree)/1.0*memTotal); 
+  return ((memTotal-memFree)/memTotal); 
   }
 
 // Done: Read and return the system uptime
@@ -105,6 +105,7 @@ long LinuxParser::UpTime() {
     std::getline(stream,line);
     std::istringstream linestream(line);
     linestream >>upTime>> idleTime;
+    stream.close();
   }
   return upTime; }
 
@@ -140,7 +141,6 @@ long LinuxParser::ActiveJiffies(int pid) {
       linestream >> utime >> stime >> cutime >> cstime;
       for(int i = 0; i < 4; i++) linestream >> ign;
       linestream >> starttime;
-
       return utime + stime + cutime + cstime +starttime;
   }
   return 0; 
@@ -233,7 +233,7 @@ string LinuxParser::Command(int pid) {
 string LinuxParser::Ram(int pid) { 
   string line, key;
   long value;
-  double val;
+  int val;
   std::ifstream filestream(kProcDirectory + to_string(pid) + kStatusFilename);
   if (filestream.is_open()) {
     while (std::getline(filestream, line)) {

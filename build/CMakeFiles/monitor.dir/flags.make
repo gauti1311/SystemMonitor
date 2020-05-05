@@ -6,5 +6,5 @@ CXX_FLAGS =   -Wall -Wextra -std=gnu++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/gautam/projects/CppND-System-Monitor/include 
+CXX_INCLUDES = -I/home/gautam/projects/Cpp_System_Monitor/include 
 
