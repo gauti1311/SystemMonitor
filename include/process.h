@@ -20,6 +20,7 @@ class Process {
   // Done: Declare any necessary private members
  private:
  int pid_;
+ float cpu;
 };
 
 #endif

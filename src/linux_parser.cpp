@@ -170,7 +170,7 @@ long LinuxParser::ActiveJiffies() {
 long LinuxParser::IdleJiffies() { return 0; }
 
 // Done: Read and return CPU utilization
-vector<string> LinuxParser::CpuUtilization() { 
+vector<string> LinuxParser::Cpu() { 
   string user, nice, system, idle, iowait, irq, softirq, steal;
   string line;
   std::ifstream stream(kProcDirectory + kStatFilename);
@@ -182,6 +182,26 @@ vector<string> LinuxParser::CpuUtilization() {
   vector<string> v{user,nice,system,idle,iowait,irq,softirq,steal};
 
   return v;}
+
+float LinuxParser::CpuUtilization(int pid) {
+  string line, value;
+  float result;
+  std::ifstream stream("/proc/" + to_string(pid) + "/stat");
+  getline(stream, line);
+  string str = line;
+  std::istringstream buf(str);
+  std::istream_iterator<string> beg(buf), end;
+  vector<string> values(beg, end);  
+  float utime = UpTime();
+  float stime = stof(values[14]);
+  float starttime = stof(values[21]);
+  float uptime = LinuxParser::UpTime(); 
+  float freq = sysconf(_SC_CLK_TCK);
+  float total_time = utime + stime;
+  float seconds = uptime - (starttime / freq);
+  result = ((total_time / freq) / seconds);
+  return result;
+} 
 
 // Done: Read and return the total number of processes
 int LinuxParser::TotalProcesses() { 
@@ -296,5 +316,5 @@ long LinuxParser::UpTime(int pid) {
       return upTime;
     }
   }
-  return upTime;
+  return UpTime()- upTime ;
   }

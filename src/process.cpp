@@ -18,23 +18,8 @@ int Process::Pid() { return pid_;}
 
 // Done: Return this process's CPU utilization
 float Process::CpuUtilization() { 
-  string line, value;
-  float result;
-  std::ifstream stream("/proc/" + to_string(pid_) + "/stat");
-  getline(stream, line);
-  string str = line;
-  std::istringstream buf(str);
-  std::istream_iterator<string> beg(buf), end;
-  vector<string> values(beg, end);  
-  float utime = UpTime();
-  float stime = stof(values[14]);
-  float starttime = stof(values[21]);
-  float uptime = LinuxParser::UpTime(); 
-  float freq = sysconf(_SC_CLK_TCK);
-  float total_time = utime + stime;
-  float seconds = uptime - (starttime / freq);
-  result = 100.0 * ((total_time / freq) / seconds);
-  return result;
+  float cpu = LinuxParser::CpuUtilization(pid_);
+  return cpu;
 }
 
 // Done: Return the command that generated this process
@@ -58,5 +43,5 @@ long int Process::UpTime() {
     }
 
 // TODO: Overload the "less than" comparison operator for Process objects
-//bool Process::operator<(Process const& a) const { 
-//    return true; }
+bool Process::operator<(Process const& a) const { 
+    return cpu < a.cpu ; }
