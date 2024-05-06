@@ -1,3 +1,0 @@
-/home/gautam/projects/Cpp_System_Monitor/build/CMakeFiles/rebuild_cache.dir
-/home/gautam/projects/Cpp_System_Monitor/build/CMakeFiles/monitor.dir
-/home/gautam/projects/Cpp_System_Monitor/build/CMakeFiles/edit_cache.dir
